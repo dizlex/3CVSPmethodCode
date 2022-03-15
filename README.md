@@ -44,8 +44,9 @@ The z_checingEachLevel file is used for the final adjustments for plotting bette
 
 NOTE:
 1) All the .m files are heavily commented aiming to be self-explanatory and to be modified according to the user needs.
-2) SeismicUNIX is hard to learn for the novices.
+2) MATLAB shows the error at every line, so you can correct as needed.
+3) SeismicUNIX is hard to learn for the novices.
 
-2.1) If there are doubts regarding the SEGY and SU formats please refer to the following book:
+3.1) If there are doubts regarding the SEGY and SU formats please refer to the following book:
 Seismic Data Processing with Seismic Un*x A 2D Seismic Data Processing Primer by David Forel, Thomas Benz, and Wayne D. Pennington.
 Published by the SEG this is a great resource for novices and beginners learning SeismicUNIX and understanding SEG-Y files
