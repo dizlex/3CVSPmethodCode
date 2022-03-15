@@ -1,13 +1,14 @@
 # PevznerCode
 # Gives fracture orientation for zero-offset 3C VSP data at a specified depth interval
 
-This is a MATLAB code for (Pevzner et al 2011) Estimation of azimuthal anisotropy from 3C VSP data using multicomponent S-wave velocity analysis
+This is a MATLAB code for the (Pevzner et al 2011) method: Estimation of azimuthal anisotropy from 3C VSP data using multicomponent S-wave velocity analysis.
+
 (Pevzner et al 2011) refers to this paper: https://espace.curtin.edu.au/handle/20.500.11937/16761
 
 REQUIREMENTS:
-1) The data in a txt file with or without headers must be put in the same directory as the downloaded git files.
+1) The data organized using an SEG-Y format in a .txt file with or without headers must be put in the same directory as the downloaded git files.
 2) The curveFittingToolBox must be installed in MATLAB.
-2) Powerpoint 2012 or later version.
+2) Powerpoint 2012 or later version (used for visualizing the results in a single file)
 
 HOW TO RUN THIS PROGRAM:
 
