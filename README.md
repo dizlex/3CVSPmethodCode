@@ -12,12 +12,13 @@ REQUIREMENTS:
 
 HOW TO RUN THIS PROGRAM:
 
-0) Zero, download the repository into a folder of your computer containing your data.
+0) Zero, download all the repository files into the folder of your computer containing your data.
 1) First, run the a_ReadDataFromTextFile
-2) Second, create a folder named after the geological formations or depth intervals to be analyzed. 
+2) Second, create a folder named after the geological formations or depth intervals to be analyzed. DO NOT GO INTO THIS FOLDER
 3) Third, copy all the files in the present working directory into the folder created in the previous step.
-4) Fourth, run the pevznerMain and modify the inputs as needed.
-5) Lastly, wait to see the results.
+4) OPEN the recently created folder.
+5) Fourth, run the pevznerMain and modify the inputs as needed*. *go to NOTE 2 for more details.
+6) Lastly, wait to see the results. The program takes on average 2 minutes per trace. 
 
 OUTPUTS OF THIS PROGRAM:
 
