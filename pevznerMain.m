@@ -11,8 +11,8 @@ plotSeis=0;    %if you want to plot seismogram of choice plotSeis=1
 %% Loading the data
 tStart = tic; %start chronometer to know who long the program takes to run
 %put the datafiles here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-filenameX='sarb09_x_stack_new.mat'; % matlab does not differentiate capital letters
-filenameZ='sarb09_y_stack_new.mat';
+filenameX='vspSurvey_xComponent_stack_new.mat'; % matlab does not differentiate capital letters
+filenameZ='vspSurvey_yComponent_stack_new.mat';
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 load(filenameX);
 load(filenameZ);
@@ -36,8 +36,9 @@ angleStep=1;       %the angle step used by Pevzner (no decimal points allowed)
 lastAngle=180;     %last angle to be scanned
 V=2250;            % initial SCANNING VELOCITY in m/s
 LastVelocityToScan=4000; %the final Velocity to be scanned in m/s
-V_step=25;        %note that it may be that V_steps < 10 produce time differences less than dt sampling interval. They may not affect the coherency
-winSizeInSec=0.03; %half the window size in seconds has to be smaller than t_0
+V_step=25;         %note that it may be that V_steps < 10 produce time differences less than dt sampling interval. They may not affect the coherency)
+winSizeInSec=0.03; %half the window size in seconds has to be smaller than or equal to t_0
+
 %% variables for pevzner method--------------------------------------
 [TotalNumOfReceivers,nt] = size(seisX); %must be equal to seisZ
 T=zeros(Num_Rec,nt);                    %space for the time array
@@ -54,17 +55,17 @@ angle=angle:angleStep:lastAngle;        %theAngleVectorContaining all the angles
 NumOfAnglesScanned=length(angle);       %theNumberOfScannedAngles
 samplesInWindow=round(winSizeInSec/dt); %250 for half second if dt=0.002
 N=samplesInWindow;M=Num_Rec;            %variables Names for easier use later
-maxNumOfScannedt_0=(totalTime-( (Num_Rec-1)*dz*1/LastVelocityToScan ))*1/t_0Step;
+maxNumOfScannedt_0=(totalTime-( (Num_Rec-1)*dz*1/LastVelocityToScan ))*1/t_0Step; %corresponds to the totalNumberOfWindowsFittingInTimeDomain
 CohArr=zeros(NumOfScannedV,floor(maxNumOfScannedt_0));
 CohArrStack=zeros(NumOfAnglesScanned,NumOfScannedV); %the space for the stacking
 REcc=1:Num_Rec-1:TotalNumOfReceivers-Num_Rec;% for the starting receivers needed later
 %REcc is a vector steping every Num_Rec-1 from the first receiverTotheEnd
-%REcc=50:58;
+%REcc=50:58;                            %If you want to analyze by trace number just change here
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%IF YOU WANT TO SKIP TO A CERTAIN RECEIVER, THEN ACTIVATE THIS
-REcc=[sum(depthRecord(1,:) <= 3036) 2];%vector containing receiver numbers which are the top of the window
-%REcc=[sum(depthRecord(1,:) <= 3000) 2]  %INSERT DEPTH VALUE TO EVALUATE
-%[minDistance, indexOfMin] = min(abs(3000-depthRecord))
+%IF YOU WANT TO SKIP TO A CERTAIN RECEIVER DEPTH, THEN ACTIVATE THE FOLLOWING LINE
+REcc=[sum(depthRecord(1,:) <= 3036) 2]; %vector containing receiver numbers which are at the top of the distance window
+%IF YOU WANT TO ANALYZE A CERTAIN DEPTH INTERVAL, THEN ACTIVATE THE FOLLOWING LINE
+%REcc=[sum(depthRecord(1,:) <= 3000):sum(depthRecord(1,:) <= 3100)+1] 
 %the last one wont be read  SELECT THE TOP RECEIVERS OF ANALYSIS WINDOW
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 D=zeros(Num_Rec,samplesInWindow,length(REcc)-1); %Creating the space for the D matrix
