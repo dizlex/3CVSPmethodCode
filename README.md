@@ -7,7 +7,7 @@ This is a MATLAB code for the (Pevzner et al 2011) method: Estimation of azimuth
 
 REQUIREMENTS:
 1) The data organized using an SEG-Y format in a .txt file with or without headers must be put in the same directory as the downloaded git files.
-2) The curveFittingToolBox must be installed in MATLAB a version not older than 2015.
+2) The curveFittingToolBox must be installed in MATLAB 2015a and forward.
 2) Powerpoint 2013 or later version (used for visualizing the results in a single file)
 
 HOW TO RUN THIS PROGRAM:
