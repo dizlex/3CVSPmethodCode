@@ -7,19 +7,20 @@ This is a MATLAB code for the (Pevzner et al 2011) method: Estimation of azimuth
 
 REQUIREMENTS:
 1) The data organized using an SEG-Y format in a .txt file with or without headers must be put in the same directory as the downloaded git files.
-2) The curveFittingToolBox must be installed in MATLAB 2015a and forward.
+2) The curveFittingToolBox must be installed in MATLAB. (Version of MATLAB 2015a and forward is recommended)
 3) Powerpoint 2013 or later version (used for visualizing the results in a single file)
-4) Basic knowledge of MATLAB syntax. (The latest version of matlab is recommended because debugging is made easier)
+4) Basic knowledge of MATLAB syntax. (The latest version of matlab is recommended because debugging is made easier, please consider it)
 
 HOW TO RUN THIS PROGRAM:
 
 0) Zero, download all the repository files into the folder of your computer containing your data.
 1) First, run the a_ReadDataFromTextFile
-2) Second, create a folder named after the geological formations or depth intervals to be analyzed. DO NOT GO INTO THIS FOLDER
-3) Third, copy all the files in the present working directory into the folder created in the previous step.
-4) OPEN the recently created folder.
-5) Fourth, run the pevznerMain and modify the inputs as needed*. *go to NOTE 2 for more details.
-6) Lastly, wait to see the results. Take two traces for your first run and see how long the program takes to execute. 
+2) Verify, that two new .mat files were created. 
+3) Second, create a folder named after the geological formations or depth intervals to be analyzed. DO NOT GO INTO THIS FOLDER
+4) Third, copy all the files in the present working directory into the folder created in the previous step.
+5) OPEN the recently created folder.
+6) Fourth, run the pevznerMain and modify the inputs as needed*. *go to NOTE 2 for more details.
+7) Lastly, wait to see the results. Take two traces for your first run and see how long the program takes to execute. 
 
 OUTPUTS OF THIS PROGRAM:
 
