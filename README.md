@@ -8,7 +8,8 @@ This is a MATLAB code for the (Pevzner et al 2011) method: Estimation of azimuth
 REQUIREMENTS:
 1) The data organized using an SEG-Y format in a .txt file with or without headers must be put in the same directory as the downloaded git files.
 2) The curveFittingToolBox must be installed in MATLAB 2015a and forward.
-2) Powerpoint 2013 or later version (used for visualizing the results in a single file)
+3) Powerpoint 2013 or later version (used for visualizing the results in a single file)
+4) Basic knowledge of MATLAB syntax. (The latest version of matlab is recommended because debugging is made easier)
 
 HOW TO RUN THIS PROGRAM:
 
@@ -18,7 +19,7 @@ HOW TO RUN THIS PROGRAM:
 3) Third, copy all the files in the present working directory into the folder created in the previous step.
 4) OPEN the recently created folder.
 5) Fourth, run the pevznerMain and modify the inputs as needed*. *go to NOTE 2 for more details.
-6) Lastly, wait to see the results. The program takes on average 2 minutes per trace. 
+6) Lastly, wait to see the results. Take two traces for your first run and see how long the program takes to execute. 
 
 OUTPUTS OF THIS PROGRAM:
 
@@ -28,7 +29,10 @@ A powerpoint presentation containing all the specified depth intervals for resul
 
 A matrix named 'FinalCoh.mat' containing all the coherency results at every depth.
 
-A .txt file containing the parameters used and the log of the errors presented in each run.
+A .txt file containing:
+1) the parameters used
+2) log of the errors presented in each run.
+3) time taken to run the program. (increase the step variables to reduce the execution time)
 
 DESCRIPTION OF THE FILES:
 The rest of the scripts which contain the pevzner name are functions which are called by pevznerMain, except for exportToPPTX which is also called.
