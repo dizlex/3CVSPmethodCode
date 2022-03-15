@@ -36,7 +36,8 @@ A .txt file containing:
 
 DESCRIPTION OF THE FILES:
 The rest of the scripts which contain the pevzner name are functions which are called by pevznerMain, except for exportToPPTX which is also called.
-The last files are used to:
+
+The last files (those beginning with a z in their name) are used after the pevznerMain has ran. They can be used to:
 1) z_DrawStratColumn
 The z_DrawStratColumn draws an stratigraphic column if the formation well tops are available in an excel file.
 The syms toolbox must be installed in MATLAB in order for z_DrawStratColumn.m file to run. 
@@ -50,8 +51,9 @@ The z_checingEachLevel file is used for the final adjustments for plotting bette
 NOTE:
 1) All the .m files are heavily commented aiming to be self-explanatory and to be modified according to the user needs.
 2) MATLAB shows the error at every line, so you can correct as needed.
-3) SeismicUNIX is hard to learn for the novices.
+3) Preparing the data file is essential, (Sadly, I cannot help you with that) 
+4) The best way to prepare SEISMIC SEG-Y data is with SeismicUNIX (Sadly again, SeismicUNIX is hard to learn for the novices).
 
-3.1) If there are doubts regarding the SEGY and SU formats please refer to the following book:
+4.1) If you are a neophyte on this SEG-Y | SU file jargon, then there are doubts regarding the SEGY and SU formats please refer to the following book:
 Seismic Data Processing with Seismic Un*x A 2D Seismic Data Processing Primer by David Forel, Thomas Benz, and Wayne D. Pennington.
 Published by the SEG this is a great resource for novices and beginners learning SeismicUNIX and understanding SEG-Y files
