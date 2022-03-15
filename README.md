@@ -20,7 +20,7 @@ HOW TO RUN THIS PROGRAM:
 4) Third, copy all the files in the present working directory into the folder created in the previous step.
 5) OPEN the recently created folder.
 6) Fourth, run the pevznerMain and modify the inputs as needed*. *go to NOTE 2 for more details.
-7) Lastly, wait to see the results. Take two traces for your first run and see how long the program takes to execute. 
+7) Lastly, wait to see the results. ( I advise you to take two traces for your first run and see how long the program takes to execute in your system. ) 
 
 OUTPUTS OF THIS PROGRAM:
 
