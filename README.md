@@ -1,5 +1,5 @@
 # PevznerCode
-# Gives fracture orientation for zero-offset 3C VSP data at a specified depth interval
+# this code gives fracture orientation for zero-offset 3C VSP data at a specified depth interval
 
 This is a MATLAB code for the (Pevzner et al 2011) method: Estimation of azimuthal anisotropy from 3C VSP data using multicomponent S-wave velocity analysis.
 
