@@ -1,6 +1,6 @@
 %this returns the Coherency at a single reference time but with multiple
 %velocities that were scanned
-function Coh = pevznerCoherency(t_0,delta_z,velocity,seisRot,Num_Rec,D,timeRecord,nt,N,M)
+function Coh = methodCoherency(t_0,delta_z,velocity,seisRot,Num_Rec,D,timeRecord,nt,N,M)
     Num_interior_sumOfAllTracesAtFixSample=zeros(1,nt); %preallocating    
     %FIRST a loop that goes through every trace and picks the initial time at each trace!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           for i=1:Num_Rec %so we go through every trace
