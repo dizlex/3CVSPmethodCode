@@ -23,7 +23,7 @@ seisRot = pevznerRotation
 %}
 
 %good practice to call the function the same name as the file
-function rotated = pevznerRotation(V_H1,V_H2,alpha)
+function rotated = methodRotation(V_H1,V_H2,alpha)
     rotated = V_H1*cos(alpha*3.1415926535/180) + V_H2*sin(alpha*3.1415926535/180); %from deg to rad you do pi/180
 end
 %{
