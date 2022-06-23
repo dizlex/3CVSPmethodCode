@@ -17,12 +17,14 @@ close all;
  end
  r=size(seisX);
  rr=size(seisZ);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %INPUT FROM USER
- dt=0.002;
- depthRecord=1145;
- dz=50;
-
- [X,Y] =meshgrid(1:r(1) , 0:dt:dt*(r(2)-1)); %depthRecord(1)+dz:dz:depthRecord(1)+dz*70
+ dt=0.002;         %time sampling
+ depthRecord=1145; %initial depth of the VSP
+ numGeoph=70;      %number of geophone locations in interval firstDepth to lastDepth
+ dz=50;            %spacing between geophones in VSP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ [X,Y] =meshgrid(1:r(1) , 0:dt:dt*(r(2)-1)); %depthRecord(1)+dz:dz:depthRecord(1)+dz*numGeoph
  title('another way to see the original seismograms')
  subplot(1,3,1)
  surf(X,Y,seisX')
