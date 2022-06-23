@@ -7,8 +7,8 @@ clear all;clc;
 %GENERATE THE seisx and seisZ variables
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 %INPUT
-    fileName = 'sarb09_x_stack_new.txt'; %the file containg the x component H1
-    fileName1 = 'sarb09_y_stack_new.txt'; %the file containg the Y component H2
+    fileName = 'WellSite_x_stack_new.txt'; %the file containg the x component H1
+    fileName1 = 'WellSite_y_stack_new.txt'; %the file containg the Y component H2
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     FID = fopen(fileName);
     data = textscan(FID,'%s');
@@ -57,9 +57,15 @@ clear all;clc;
     %I have it all into one column of string
     finalStringData=finalStringData';
     %turning into rows
-    %%%%%%%%%%%%% check how many number of samples are there ns=?
+    %%%%%%%%%%%%% 
+    %----------- USER INPUT -------------------------------------------------
+    
+    %check how many number of samples are there ns=?
     %%% the example is Rows_of_2000 because there were ns=2000
-    Rows_of_2000  = reshape(finalStringData, 6000, []).'; 
+    numSam=6000; %numberOFSamples
+    
+    %-----------------------------------------------------------------------
+    Rows_of_2000  = reshape(finalStringData, numSam, []).'; 
     clear finalStringData;clear pat; clear i;clear TF; clear counter; clear newStringData;
     [n1,n2]=size(Rows_of_2000);
     seisX=zeros(n1,n2);
@@ -123,7 +129,7 @@ clear all;clc;
     %I have it all into one column of string
     finalStringData=finalStringData';
     %turning into rows
-    Rows_of_2000  = reshape(finalStringData, 6000, []).';
+    Rows_of_2000  = reshape(finalStringData, numSam, []).';
     clear finalStringData;clear pat; clear i;clear TF; clear counter; clear newStringData;
     [n1,n2]=size(Rows_of_2000);
     seisY=zeros(n1,n2);
