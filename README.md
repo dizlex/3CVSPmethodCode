@@ -1,4 +1,4 @@
-# PevznerCode
+# 3CVSPmethodCode
 # this code gives fracture orientation for zero-offset 3C VSP data at a specified depth interval
 
 This is a MATLAB code for the (Pevzner et al 2011) method: Estimation of azimuthal anisotropy from 3C VSP data using multicomponent S-wave velocity analysis.
@@ -19,7 +19,7 @@ HOW TO RUN THIS PROGRAM:
 3) Second, create a folder named after the geological formations or depth intervals to be analyzed. DO NOT GO INTO THIS FOLDER
 4) Third, copy all the files in the present working directory into the folder created in the previous step.
 5) OPEN the recently created folder.
-6) Fourth, run the pevznerMain and modify the inputs as needed*. *go to NOTE 2 for more details.
+6) Fourth, run the methodMain and modify the inputs as needed*. *go to NOTE 2 for more details.
 7) Lastly, wait to see the results. ( I advise you to take two traces for your first run and see how long the program takes to execute in your system. ) 
 
 OUTPUTS OF THIS PROGRAM:
@@ -36,9 +36,9 @@ A .txt file containing:
 3) time taken to run the program. (increase the step variables to reduce the execution time)
 
 DESCRIPTION OF THE FILES:
-The rest of the scripts which contain the pevzner name are functions which are called by pevznerMain, except for exportToPPTX which is also called.
+The rest of the scripts which containing the method name are functions which are called by methodMain, except for exportToPPTX which is also called.
 
-The last files (those beginning with a z in their name) are used after the pevznerMain has ran. They can be used to:
+The last files (those beginning with a z in their name) may be used after the methodMain has ran. They can be used to:
 1) z_DrawStratColumn
 The z_DrawStratColumn draws an stratigraphic column if the formation well tops are available in an excel file.
 The syms toolbox must be installed in MATLAB in order for z_DrawStratColumn.m file to run. 
