@@ -8,7 +8,7 @@ close all; clear all; close all; clc;
 %% FIRST part that needs some input from seismic 
 %% INPUTS-----------------------------------------------------------------
 
-filenameX='sarb09_x_stack_new.mat'; %filename handle
+filenameX='Well_x_stack_new.mat'; %filename handle
 load(filenameX); %%Loading the data from seismic
 dz=15;             %space between receivers at depth (z-axis)
 z_0=1251;          %initialDepth of first receiver
@@ -30,7 +30,7 @@ depthRecord=z_0:dz:TotalDepth-dz;   %The row vector  containing all the [z depth
 syms x %using the syms package of matlab as exercise
 f1= 0.00001*x;% so we draw the horizontal or vertical lines
 %% INPUT HERE MUST BE A FILE WITH FORMATION TOPS ON THE FIRST COLUMN AND DEPTHS ON THE RIGHT COLUMN
-fileName='FormationTops_Sarb.xlsx';
+fileName='FormationTops_Well.xlsx';
 colors = {'white'};% { 'black';'red'; 'blue'; 'green'; 'yellow' };
 
 %below the formation names
@@ -78,7 +78,7 @@ hold on
 axis equal
 ylim([-100 depthToUnit(end)]+100)%100s just to give some edges while plotting
 xlim([0 horizontalLim])
-title('Sarb formations column')
+title('Well formations column')
 ylabel('Depth To Top Of Unit [m]')
 set(gca, 'YDir','reverse') %plotting with the ydirection down
 
@@ -138,7 +138,7 @@ patch(scanwin_x,scanwin_y,'red') %drwaing the analysis window in red
     %filename=strcat(filenameX,filename);
     %if you want to save
     if save==1
-    filenameFig=strcat('NOT_a_result_ZakumDepthInterval=',num2str( depthRecord(k) ),'to',num2str( depthRecord(  k+Num_Rec-1 ) +(Num_Rec-1)*dz));
+    filenameFig=strcat('Well_DepthInterval=',num2str( depthRecord(k) ),'to',num2str( depthRecord(  k+Num_Rec-1 ) +(Num_Rec-1)*dz));
     saveas(gcf,filenameFig,'png') %gcf is get current figure
     else
         if k==1
