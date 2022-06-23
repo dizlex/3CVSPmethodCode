@@ -2,7 +2,7 @@ clear all;clc;close all;
 %CHECK THAT YOU HAVE THE seisX.mat and seisZ.mat saved at same directory
 %                        you need the curveFittingToolBox installed to plot
 %                        you need the exportToPPTX at same directory
-%This script is the MATLAB coding of the Pevzner et al.2010 method
+%This script is the MATLAB coding of the Pevzner et al.2011 method:
 %Estimation of azimuthal anisotropy from VSP data using Multicomponent S-wave velocity analysis
 %------------------------------------------------------------------------
 Num_Rec=14;    % total number of receivers in window
@@ -301,7 +301,10 @@ close(figH);
 
 %% Save presentation  -- overwrite file if it already exists
 % Filename automatically checked for proper extension
-newFile     = pptx.save(strcat('results','numRec=',num2str(Num_Rec)));
+% Filename automatically checked for proper extension
+[~,name,~]=fileparts(pwd); %getting the working folder name
+newFile = pptx.save(strcat(name,'_numRec=',num2str(Num_Rec)));
+%newFile     = pptx.save(strcat('results','numRec=',num2str(Num_Rec)));
 
 end % end of master depth loop
 
