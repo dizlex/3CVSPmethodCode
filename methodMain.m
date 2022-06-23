@@ -181,7 +181,7 @@ for mastercount=1:length(REcc)-1 %THE MAIN LOOP that goes through depth
  for counterAlpha=1:NumOfAnglesScanned %THE ANGLE LOOP------------------------------------------------------------------
  %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
          alpha=angle(counterAlpha);
-         seisRot = pevznerRotation(Vx,Vz,alpha); %Creating the rotated seismogram (see function for details)
+         seisRot = methodRotation(Vx,Vz,alpha); %Creating the rotated seismogram (see function for details)
  %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                  for counterV = 1:NumOfScannedV %THE VELOCITY LOOP-------------------------------------------------------------------------------
  %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -204,7 +204,7 @@ for mastercount=1:length(REcc)-1 %THE MAIN LOOP that goes through depth
                         t_0=initialTime; %current reference time
                         t_0=t_0+t_0Step; %changing the reference time to be evaluated | t_0Step=winSizeInSec/2;
                         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                        Coh = pevznerCoherency(t_0,delta_z,velocity,seisRot,Num_Rec,D,timeRecord,nt,N,M); %getting the coherency with this function
+                        Coh = methodCoherency(t_0,delta_z,velocity,seisRot,Num_Rec,D,timeRecord,nt,N,M); %getting the coherency with this function
                         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                 %fprintf('The Coherency at %d[m/s] alpha= %d and t_0= %d is %d \n', velocities(counterV),angle(counterAlpha),refTimes(countert_0),Coh); %---------------------------------%%TO CHECK THE RESULTS REDUCE THE NUMBER OF ANGLES            
                             CohArr(counterV,countert_0) = Coh; %saving the current coherency of the scanning t_0 at a fixed V  (it is also at a fixed alpha but this is 2D son not important)
